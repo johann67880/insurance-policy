@@ -50,18 +50,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\InsuranceContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Base\EntityBaseRepository.cs" />
+    <Compile Include="Repositories\CoverageTypeRepository.cs" />
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\InsuranceByCustomerRepository.cs" />
+    <Compile Include="Repositories\InsuranceRepository.cs" />
+    <Compile Include="Repositories\RiskTypeRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Context\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Insurance-Policy.Domain\Insurance.Policy.Domain.csproj">
+      <Project>{DF120313-0BDC-4A1D-BC1E-0DF4856C5777}</Project>
+      <Name>Insurance.Policy.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

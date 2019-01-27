@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,11 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\CoverageType.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\Insurance.cs" />
+    <Compile Include="Entities\InsuranceByCustomer.cs" />
+    <Compile Include="Entities\RiskType.cs" />
+    <Compile Include="Interfaces\ICoverageTypeRepository.cs" />
+    <Compile Include="Interfaces\ICustomerRepository.cs" />
+    <Compile Include="Interfaces\Base\IEntityBaseRepository.cs" />
+    <Compile Include="Interfaces\IInsuranceByCustomerRepository.cs" />
+    <Compile Include="Interfaces\IInsuranceRepository.cs" />
+    <Compile Include="Interfaces\IRiskTypeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
