@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance-Policy.API", "Ins
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance-Policy.API.Tests", "Insurance-Policy.API.Tests\Insurance-Policy.API.Tests.csproj", "{17ED077D-C892-4149-899A-340DB0E540E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance-Policy.Infrastructure", "Insurance-Policy.Infrastructure\Insurance-Policy.Infrastructure.csproj", "{917B984E-2269-44D2-B308-F194ABC6DCB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance-Policy.Domain", "Insurance-Policy.Domain\Insurance-Policy.Domain.csproj", "{DF120313-0BDC-4A1D-BC1E-0DF4856C5777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance-Policy.Services", "Insurance-Policy.Services\Insurance-Policy.Services.csproj", "{6A593BB3-9688-4418-AD17-34E39938F7BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance-Policy.UI", "Insurance-Policy.UI\Insurance-Policy.UI.csproj", "{0F6E09D8-8B4D-483F-B13E-4A404B2192B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +29,22 @@ Global
 		{17ED077D-C892-4149-899A-340DB0E540E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17ED077D-C892-4149-899A-340DB0E540E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17ED077D-C892-4149-899A-340DB0E540E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{917B984E-2269-44D2-B308-F194ABC6DCB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{917B984E-2269-44D2-B308-F194ABC6DCB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{917B984E-2269-44D2-B308-F194ABC6DCB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{917B984E-2269-44D2-B308-F194ABC6DCB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF120313-0BDC-4A1D-BC1E-0DF4856C5777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF120313-0BDC-4A1D-BC1E-0DF4856C5777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF120313-0BDC-4A1D-BC1E-0DF4856C5777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF120313-0BDC-4A1D-BC1E-0DF4856C5777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A593BB3-9688-4418-AD17-34E39938F7BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A593BB3-9688-4418-AD17-34E39938F7BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A593BB3-9688-4418-AD17-34E39938F7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A593BB3-9688-4418-AD17-34E39938F7BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F6E09D8-8B4D-483F-B13E-4A404B2192B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F6E09D8-8B4D-483F-B13E-4A404B2192B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F6E09D8-8B4D-483F-B13E-4A404B2192B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F6E09D8-8B4D-483F-B13E-4A404B2192B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
