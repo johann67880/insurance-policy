@@ -12,15 +12,13 @@ namespace Insurance_Policy.Domain.Entities
     public class InsuranceByCustomer
     {
         [Key]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
-        [ForeignKey("Customer")]
-        public Customer CustomerId { get; set; }
+        public int CustomerId { get; set; }
 
         [Required]
-        [ForeignKey("Insurance")]
-        public Insurance InsuranceId { get; set; }
+        public int InsuranceId { get; set; }
 
         [Required]
         public DateTime AssignationDate { get; set; } = DateTime.Now;

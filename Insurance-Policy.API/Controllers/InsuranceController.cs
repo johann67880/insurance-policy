@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Insurance_Policy.Domain.Entities;
+using Insurance_Policy.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,9 +14,96 @@ namespace Insurance_Policy.API.Controllers
     [RoutePrefix("api/insurance")]
     public class InsuranceController : ApiController
     {
+        private readonly IInsuranceService<Insurance> service;
+
         public InsuranceController()
         {
 
+        }
+
+        public InsuranceController(IInsuranceService<Insurance> service)
+        {
+            this.service = service;
+        }
+
+        [Route("getall")]
+        [HttpGet]
+        public IHttpActionResult GetInsurances()
+        {
+            try
+            {
+                var result = this.service.GetAll();
+                return this.Ok(result);
+            }
+            catch (Exception e)
+            {
+                return this.InternalServerError();
+            }
+        }
+
+        [Route("update")]
+        [HttpPut]
+        public IHttpActionResult UpdateCustomer(Insurance insurance)
+        {
+            try
+            {
+                if(!(insurance is Insurance))
+                {
+                    return this.Ok(false);
+                }
+
+                this.service.Update(insurance);
+                return this.Ok(true);
+            }
+            catch (Exception e)
+            {
+                return this.InternalServerError();
+            }
+        }
+
+        [Route("delete/{id:int}")]
+        [HttpDelete]
+        public IHttpActionResult DeleteCustomer(int id)
+        {
+            try
+            {
+                if (id == 0)
+                {
+                    return this.Ok(false);
+                }
+
+                Insurance insurance = new Insurance()
+                {
+                    Id = id
+                };
+
+                this.service.Delete(insurance);
+                return this.Ok(true);
+            }
+            catch (Exception e)
+            {
+                return this.InternalServerError();
+            }
+        }
+
+        [Route("save")]
+        [HttpPost]
+        public IHttpActionResult SaveCustomer([FromBody] Insurance insurance)
+        {
+            try
+            {
+                if (!(insurance is Insurance))
+                {
+                    return this.Ok(false);
+                }
+
+                this.service.Add(insurance);
+                return this.Ok(true);
+            }
+            catch (Exception e)
+            {
+                return this.InternalServerError();
+            }
         }
     }
 }

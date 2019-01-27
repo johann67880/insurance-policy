@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Insurance_Policy.API.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,7 @@ namespace Insurance_Policy.API
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DependencyConfig.RegisterDependencies(GlobalConfiguration.Configuration);
         }
     }
 }

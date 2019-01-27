@@ -30,7 +30,7 @@ namespace Insurance_Policy.Services.Services
 
         public InsuranceByCustomer Get(InsuranceByCustomer entity)
         {
-            return this.repository.Get(x => x.CustomerId.Name == entity.CustomerId.Name);
+            return this.repository.Get(x => x.CustomerId == entity.CustomerId);
         }
 
         public List<InsuranceByCustomer> GetAll()

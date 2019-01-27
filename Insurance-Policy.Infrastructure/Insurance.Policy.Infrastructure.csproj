@@ -59,9 +59,8 @@
     <Compile Include="Repositories\InsuranceRepository.cs" />
     <Compile Include="Repositories\RiskTypeRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

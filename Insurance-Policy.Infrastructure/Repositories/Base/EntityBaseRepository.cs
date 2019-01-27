@@ -23,6 +23,7 @@ namespace Insurance_Policy.Infrastructure.Repositories.Base
         {
             var entitySet = Context.Set<T>();
             entitySet.Add(entity);
+            Commit();
         }
 
         public void Commit()
@@ -33,7 +34,9 @@ namespace Insurance_Policy.Infrastructure.Repositories.Base
         public void Delete(T entity)
         {
             var entitySet = Context.Set<T>();
+            entitySet.Attach(entity);
             entitySet.Remove(entity);
+            Commit();
         }
 
         public T Get(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
@@ -55,6 +58,7 @@ namespace Insurance_Policy.Infrastructure.Repositories.Base
         public void Update(T entity)
         {
             Context.Entry(entity).State = EntityState.Modified;
+            Commit();
         }
     }
 }

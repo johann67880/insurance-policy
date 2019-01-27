@@ -11,7 +11,7 @@ namespace Insurance_Policy.Domain.Entities
     public class Insurance
     {
         [Key]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -20,8 +20,7 @@ namespace Insurance_Policy.Domain.Entities
         public string Description { get; set; }
 
         [Required]
-        [ForeignKey("CoverageType")]
-        public CoverageType CoverageId { get; set; }
+        public int CoverageId { get; set; }
 
         [Required]
         public DateTime StartDate { get; set; }
@@ -33,7 +32,6 @@ namespace Insurance_Policy.Domain.Entities
         public decimal Pricing { get; set; }
 
         [Required]
-        [ForeignKey("RiskType")]
         public int RiskId { get; set; }
     }
 }
