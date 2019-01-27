@@ -109,9 +109,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Insurance-Policy.API\Insurance-Policy.API.csproj">
+    <ProjectReference Include="..\Insurance-Policy.API\Insurance.Policy.API.csproj">
       <Project>{D8F16F92-B749-438F-9392-D7C541C8766D}</Project>
-      <Name>Insurance-Policy.API</Name>
+      <Name>Insurance.Policy.API</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
