@@ -248,6 +248,20 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Insurance-Policy.Domain\Insurance.Policy.Domain.csproj">
+      <Project>{DF120313-0BDC-4A1D-BC1E-0DF4856C5777}</Project>
+      <Name>Insurance.Policy.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insurance-Policy.Infrastructure\Insurance.Policy.Infrastructure.csproj">
+      <Project>{917B984E-2269-44D2-B308-F194ABC6DCB0}</Project>
+      <Name>Insurance.Policy.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insurance-Policy.Services\Insurance.Policy.Services.csproj">
+      <Project>{6A593BB3-9688-4418-AD17-34E39938F7BF}</Project>
+      <Name>Insurance.Policy.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

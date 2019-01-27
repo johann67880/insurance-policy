@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Insurance_Policy.Infrastructure.Repositories
 {
-    class CustomerRepository : EntityBaseRepository<Customer>, ICustomerRepository
+    public class CustomerRepository : EntityBaseRepository<Customer>, ICustomerRepository
     {
         public CustomerRepository(InsuranceContext context) : base(context)
         {
