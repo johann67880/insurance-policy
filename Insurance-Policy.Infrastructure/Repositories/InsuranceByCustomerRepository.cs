@@ -1,5 +1,6 @@
 ﻿using Insurance_Policy.Domain.Entities;
 using Insurance_Policy.Domain.Interfaces;
+using Insurance_Policy.Domain.Models;
 using Insurance_Policy.Infrastructure.Context;
 using Insurance_Policy.Infrastructure.Repositories.Base;
 using System;

@@ -1,5 +1,6 @@
 ﻿using Insurance_Policy.Domain.Entities;
 using Insurance_Policy.Domain.Interfaces;
+using Insurance_Policy.Domain.Models;
 using Insurance_Policy.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,11 @@ namespace Insurance_Policy.Services.Services
         public List<Insurance> GetAll()
         {
             return this.repository.GetAll().ToList();
+        }
+
+        public List<InsuranceModel> GetAllInsurances()
+        {
+            return this.repository.GetAllInsurances();
         }
 
         public void Update(Insurance entity)

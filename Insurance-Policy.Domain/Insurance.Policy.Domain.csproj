@@ -53,6 +53,7 @@
     <Compile Include="Interfaces\IInsuranceByCustomerRepository.cs" />
     <Compile Include="Interfaces\IInsuranceRepository.cs" />
     <Compile Include="Interfaces\IRiskTypeRepository.cs" />
+    <Compile Include="Models\InsuranceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

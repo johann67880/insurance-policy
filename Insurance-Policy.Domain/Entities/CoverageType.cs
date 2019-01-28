@@ -14,8 +14,5 @@ namespace Insurance_Policy.Domain.Entities
 
         [Required]
         public string Type { get; set; }
-
-        [Required]
-        public decimal CoveragePercentage { get; set; }
     }
 }

@@ -4,13 +4,13 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from "./components/app.component";
 import { LoginComponent } from "./components/login/login.component";
 import { InsuranceComponent } from "./components/insurance/insurance.component";
+import { InsuranceDetailComponent } from "./components/insurance/insurance-detail/insurance-detail.component";
+import { MaterialModule } from "./common/material.module";
 
 @NgModule({
   imports: [
@@ -18,17 +18,22 @@ import { InsuranceComponent } from "./components/insurance/insurance.component";
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   declarations: [
     AppComponent,
     LoginComponent,
-    InsuranceComponent
+    InsuranceComponent,
+    InsuranceDetailComponent
   ],
   providers: [
     { provide: 'BASE_URL', useFactory: getBaseUrl }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents : [
+    InsuranceDetailComponent
+  ]
 })
 export class AppModule {
 }

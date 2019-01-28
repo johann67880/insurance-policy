@@ -11,28 +11,25 @@ using System.Web.Http.Cors;
 namespace Insurance_Policy.API.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    [RoutePrefix("api/insurance")]
-    public class InsuranceController : ApiController
+    [RoutePrefix("api/risk")]
+    public class RiskTypeController : ApiController
     {
-        private readonly IInsuranceService<Insurance> service;
+        private readonly IRiskTypeService<RiskType> service;
 
-        public InsuranceController()
-        {
+        public RiskTypeController() { }
 
-        }
-
-        public InsuranceController(IInsuranceService<Insurance> service)
+        public RiskTypeController(IRiskTypeService<RiskType> service)
         {
             this.service = service;
         }
 
         [Route("getall")]
         [HttpGet]
-        public IHttpActionResult GetAllInsurances()
+        public IHttpActionResult GetRiskTypes()
         {
             try
             {
-                var result = this.service.GetAllInsurances();
+                var result = this.service.GetAll();
                 return this.Ok(result);
             }
             catch (Exception e)
@@ -43,16 +40,16 @@ namespace Insurance_Policy.API.Controllers
 
         [Route("update")]
         [HttpPut]
-        public IHttpActionResult UpdateCustomer(Insurance insurance)
+        public IHttpActionResult UpdateRiskType(RiskType riskType)
         {
             try
             {
-                if(!(insurance is Insurance))
+                if (!(riskType is RiskType))
                 {
                     return this.Ok(false);
                 }
 
-                this.service.Update(insurance);
+                this.service.Update(riskType);
                 return this.Ok(true);
             }
             catch (Exception e)
@@ -61,9 +58,9 @@ namespace Insurance_Policy.API.Controllers
             }
         }
 
-        [Route("delete/{id:int}")]
+        [Route("delete")]
         [HttpDelete]
-        public IHttpActionResult DeleteCustomer(int id)
+        public IHttpActionResult DeleteRiskType(int id)
         {
             try
             {
@@ -72,12 +69,12 @@ namespace Insurance_Policy.API.Controllers
                     return this.Ok(false);
                 }
 
-                Insurance insurance = new Insurance()
+                RiskType riskType = new RiskType()
                 {
                     Id = id
                 };
 
-                this.service.Delete(insurance);
+                this.service.Delete(riskType);
                 return this.Ok(true);
             }
             catch (Exception e)
@@ -88,16 +85,16 @@ namespace Insurance_Policy.API.Controllers
 
         [Route("save")]
         [HttpPost]
-        public IHttpActionResult SaveCustomer([FromBody] Insurance insurance)
+        public IHttpActionResult SaveRiskType([FromBody] RiskType riskType)
         {
             try
             {
-                if (!(insurance is Insurance))
+                if (!(riskType is RiskType))
                 {
                     return this.Ok(false);
                 }
 
-                this.service.Add(insurance);
+                this.service.Add(riskType);
                 return this.Ok(true);
             }
             catch (Exception e)

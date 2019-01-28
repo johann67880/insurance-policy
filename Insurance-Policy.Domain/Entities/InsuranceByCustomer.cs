@@ -11,16 +11,12 @@ namespace Insurance_Policy.Domain.Entities
 {
     public class InsuranceByCustomer
     {
-        [Key]
         public long Id { get; set; }
 
-        [Required]
         public int CustomerId { get; set; }
 
-        [Required]
         public int InsuranceId { get; set; }
 
-        [Required]
         public DateTime AssignationDate { get; set; } = DateTime.Now;
     }
 }

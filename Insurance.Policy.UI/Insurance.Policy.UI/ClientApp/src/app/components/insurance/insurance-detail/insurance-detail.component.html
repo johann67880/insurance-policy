@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>{{data.Id != 0 ? "Actualizar" : "Crear"}}</h1>
+<div mat-dialog-content [formGroup]="form">
+
+  <mat-form-field class="width-100">
+    <input matInput placeholder="Nombre" formControlName="Name">
+  </mat-form-field>
+
+  <mat-form-field class="width-100">
+    <textarea matInput placeholder="Descripción" formControlName="Description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="width-100">
+    <input matInput placeholder="Fecha Inicio Cobertura" [matDatepicker]="picker" formControlName="StartDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="width-100">
+    <input matInput placeholder="Periodo de Cobertura" formControlName="CoveragePeriod">
+  </mat-form-field>
+
+  <mat-form-field class="width-100">
+    <mat-select formControlName="SelectRisk" placeholder="Tipo de Riesgo">
+      <mat-option *ngFor="let risk of risks" [value]="risk.Id">
+        {{risk.Type}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="width-100">
+    <mat-select formControlName="SelectCoverage" placeholder="Tipo de Cobertura">
+      <mat-option *ngFor="let coverage of coverages" [value]="coverage.Id">
+        {{coverage.Type}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="width-100">
+    <input matInput placeholder="Porcentaje de Cobertura" formControlName="CoveragePercentage">
+  </mat-form-field>
+
+  <mat-form-field class="width-100">
+    <input matInput placeholder="Precio" formControlName="Pricing">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Cancelar</button>
+  <button mat-button color="primary" [mat-dialog-close]="form.controls" cdkFocusInitial>Ok</button>
+</div>

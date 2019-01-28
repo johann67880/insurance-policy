@@ -1,5 +1,6 @@
 ﻿using Insurance_Policy.Domain.Entities;
 using Insurance_Policy.Domain.Interfaces.Base;
+using Insurance_Policy.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace Insurance_Policy.Domain.Interfaces
 {
     public interface IInsuranceRepository : IEntityBaseRepository<Insurance>
     {
+        List<InsuranceModel> GetAllInsurances();
     }
 }

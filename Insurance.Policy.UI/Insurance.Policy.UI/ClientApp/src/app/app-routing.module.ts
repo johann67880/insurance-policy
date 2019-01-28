@@ -5,8 +5,8 @@ import { LoginComponent } from "./components/login/login.component";
 import { InsuranceComponent } from "./components/insurance/insurance.component";
 
 const routes: Routes = [
-  { path: "", component: LoginComponent, data: { title: "Login" } },
-  { path: "login", component: LoginComponent, data: { title: "Login" } },
+  { path: "", component: InsuranceComponent, data: { title: "Login" } },
+  //{ path: "login", component: LoginComponent, data: { title: "Login" } },
   { path: "insurance", component: InsuranceComponent, data: { title: "Insurance Policy" } }
 ];
 
