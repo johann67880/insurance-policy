@@ -47,12 +47,14 @@
     <Compile Include="Entities\Insurance.cs" />
     <Compile Include="Entities\InsuranceByCustomer.cs" />
     <Compile Include="Entities\RiskType.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Interfaces\ICoverageTypeRepository.cs" />
     <Compile Include="Interfaces\ICustomerRepository.cs" />
     <Compile Include="Interfaces\Base\IEntityBaseRepository.cs" />
     <Compile Include="Interfaces\IInsuranceByCustomerRepository.cs" />
     <Compile Include="Interfaces\IInsuranceRepository.cs" />
     <Compile Include="Interfaces\IRiskTypeRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Models\InsuranceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

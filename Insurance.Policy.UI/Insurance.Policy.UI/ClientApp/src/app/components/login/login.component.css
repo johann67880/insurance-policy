@@ -27,30 +27,24 @@
 }
 
 
-.separator-hr {
-    margin: 0;
+.login-container {
+    margin: auto;
+    width: 50%;
+    margin-top: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
-.last-control-group {
-    margin-bottom: -25px;
+.sub-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
 }
 
-
-
-@media (min-width: 768px) {
-    .login-container {
-        width: 700px;
-    }
+.login-button-container {
+    padding-bottom: 30px;
 }
 
-/*@media (min-width: 992px) {
-    .login-container {
-        width: 700px;
-    }
-}*/
-
-@media (min-width: 1200px) {
-    .login-container {
-        width: 730px;
-    }
+.width-100 {
+    width: 100% !important;
 }

@@ -13,6 +13,8 @@ import { InsuranceDetailComponent } from "./components/insurance/insurance-detai
 import { AssignInsuranceComponent } from  './components/assign-insurance/assign-insurance.component';
 import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from "./common/material.module";
+import { AuthGuard } from "../app/components/login/auth.guard.service";
+import { UserService } from "../app/components/login/login.service";
 
 @NgModule({
   imports: [
@@ -32,7 +34,8 @@ import { MaterialModule } from "./common/material.module";
     HomeComponent
   ],
   providers: [
-    { provide: 'BASE_URL', useFactory: getBaseUrl }
+    { provide: 'BASE_URL', useFactory: getBaseUrl },
+    AuthGuard
   ],
   bootstrap: [AppComponent],
   entryComponents : [

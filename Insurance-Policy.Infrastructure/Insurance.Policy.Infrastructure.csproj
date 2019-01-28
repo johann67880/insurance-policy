@@ -58,6 +58,7 @@
     <Compile Include="Repositories\InsuranceByCustomerRepository.cs" />
     <Compile Include="Repositories\InsuranceRepository.cs" />
     <Compile Include="Repositories\RiskTypeRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

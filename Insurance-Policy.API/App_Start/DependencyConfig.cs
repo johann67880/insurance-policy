@@ -28,6 +28,7 @@ namespace Insurance_Policy.API.App_Start
             builder.RegisterType<CustomerService>().As<ICustomerService<Customer>>();
             builder.RegisterType<InsuranceService>().As<IInsuranceService<Insurance>>();
             builder.RegisterType<InsuranceByCustomerService>().As<IInsuranceByCustomerService<InsuranceByCustomer>>();
+            builder.RegisterType<UserService>().As<IUserService<User>>();
 
             //Repositories
             builder.RegisterType<CoverageTypeRepository>().As<ICoverageTypeRepository>();
@@ -35,6 +36,7 @@ namespace Insurance_Policy.API.App_Start
             builder.RegisterType<CustomerRepository>().As<ICustomerRepository>();
             builder.RegisterType<InsuranceRepository>().As<IInsuranceRepository>();
             builder.RegisterType<InsuranceByCustomerRepository>().As<IInsuranceByCustomerRepository>();
+            builder.RegisterType<UserRepository>().As<IUserRepository>();
 
             string connectionString = ConfigurationManager.ConnectionStrings["InsuranceContextConnectionString"].ConnectionString;
             builder.RegisterType<InsuranceContext>().WithParameter("connectionString", connectionString);

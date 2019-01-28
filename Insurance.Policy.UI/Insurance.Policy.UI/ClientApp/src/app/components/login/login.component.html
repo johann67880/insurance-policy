@@ -1,3 +1,19 @@
-<div>
-  LOGIN COMPONENT
-</div>
+<form [formGroup]="form" class="example-form">
+  <div class="login-container">
+    <div class="sub-container">
+      <mat-form-field class="width-100">
+        <input matInput placeholder="Usuario" formControlName="UserName">
+      </mat-form-field>
+
+      <mat-form-field class="width-100">
+        <input type="password" matInput placeholder="Password" formControlName="Password">
+      </mat-form-field>
+
+      <div class="login-button-container">
+        <button mat-stroked-button (click)="logIn()" color="primary" [disabled]="invalidForm">
+          <span class="button-create-text">Iniciar Sesión</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -30,5 +30,7 @@ namespace Insurance_Policy.Infrastructure.Context
         public DbSet<RiskType> RiskType { get; set; }
         public DbSet<Insurance> Insurance { get; set; }
         public DbSet<InsuranceByCustomer> InsuranceByCustomer { get; set; }
+
+        public DbSet<User> User { get; set; }
     }
 }

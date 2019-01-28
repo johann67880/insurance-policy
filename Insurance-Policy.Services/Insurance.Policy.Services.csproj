@@ -46,6 +46,7 @@
     <Compile Include="Interfaces\IInsuranceByCustomerService.cs" />
     <Compile Include="Interfaces\IInsuranceService.cs" />
     <Compile Include="Interfaces\IRiskTypeService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\Base\IBaseService.cs" />
     <Compile Include="Services\CoverageTypeService.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Services\InsuranceByCustomerService.cs" />
     <Compile Include="Services\InsuranceService.cs" />
     <Compile Include="Services\RiskTypeService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Insurance-Policy.Domain\Insurance.Policy.Domain.csproj">
