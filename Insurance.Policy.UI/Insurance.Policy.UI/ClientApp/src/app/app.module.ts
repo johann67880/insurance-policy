@@ -10,6 +10,7 @@ import { AppComponent } from "./components/app.component";
 import { LoginComponent } from "./components/login/login.component";
 import { InsuranceComponent } from "./components/insurance/insurance.component";
 import { InsuranceDetailComponent } from "./components/insurance/insurance-detail/insurance-detail.component";
+import { AssignInsuranceComponent } from  './components/assign-insurance/assign-insurance.component';
 import { MaterialModule } from "./common/material.module";
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MaterialModule } from "./common/material.module";
     AppComponent,
     LoginComponent,
     InsuranceComponent,
-    InsuranceDetailComponent
+    InsuranceDetailComponent,
+    AssignInsuranceComponent
   ],
   providers: [
     { provide: 'BASE_URL', useFactory: getBaseUrl }

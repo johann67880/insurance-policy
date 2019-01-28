@@ -9,6 +9,8 @@ namespace Insurance_Policy.Services.Interfaces
 {
     public interface IInsuranceByCustomerService<T> : IBaseService<T>
     {
+        void SaveAssignations(List<T> assignations);
 
+        List<T> GetAssignationsByCustomer(int customerId);
     }
 }

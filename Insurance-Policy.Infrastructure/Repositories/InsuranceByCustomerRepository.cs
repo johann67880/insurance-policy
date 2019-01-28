@@ -16,5 +16,24 @@ namespace Insurance_Policy.Infrastructure.Repositories
         public InsuranceByCustomerRepository(InsuranceContext context) : base(context)
         {
         }
+
+        public void SaveAssignations(List<InsuranceByCustomer> assignations)
+        {
+            long customerId = assignations[0].CustomerId;
+            var rowsToDelete = this.GetAll(x => x.CustomerId == customerId).ToList();
+
+            rowsToDelete.ForEach(x =>
+            {
+                //removes all previous assignations for current customer
+                this.Delete(x);
+            });
+
+            //inserts new assignations associated to current customer
+            assignations.ForEach(x =>
+            {
+                x.AssignationDate = DateTime.Now;
+                this.Add(x);
+            });
+        }
     }
 }

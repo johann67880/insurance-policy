@@ -11,5 +11,6 @@ namespace Insurance_Policy.Domain.Interfaces
 {
     public interface IInsuranceByCustomerRepository : IEntityBaseRepository<InsuranceByCustomer>
     {
+        void SaveAssignations(List<InsuranceByCustomer> assignations);
     }
 }

@@ -13,9 +13,9 @@ namespace Insurance_Policy.Domain.Entities
     {
         public long Id { get; set; }
 
-        public int CustomerId { get; set; }
+        public long CustomerId { get; set; }
 
-        public int InsuranceId { get; set; }
+        public long InsuranceId { get; set; }
 
         public DateTime AssignationDate { get; set; } = DateTime.Now;
     }

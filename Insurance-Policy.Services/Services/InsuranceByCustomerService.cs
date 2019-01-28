@@ -38,6 +38,16 @@ namespace Insurance_Policy.Services.Services
             return this.repository.GetAll().ToList();
         }
 
+        public List<InsuranceByCustomer> GetAssignationsByCustomer(int customerId)
+        {
+            return this.repository.GetAll(x => x.CustomerId.Equals(customerId)).ToList();
+        }
+
+        public void SaveAssignations(List<InsuranceByCustomer> assignations)
+        {
+            this.repository.SaveAssignations(assignations);
+        }
+
         public void Update(InsuranceByCustomer entity)
         {
             this.repository.Update(entity);
