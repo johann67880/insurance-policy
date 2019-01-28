@@ -66,7 +66,7 @@ namespace Insurance_Policy.Services.Services
         private bool validateInsurance(Insurance entity)
         {
             //Business validations are implemented in Service Layer
-            var risk = this.riskRepository.Get(x => x.Id.Equals(entity.RiskId));
+            var risk = this.riskRepository.Get(entity.RiskId);
 
             if (risk.Type.ToLower().Contains("alto") && entity.CoveragePercentage >= 50)
             {

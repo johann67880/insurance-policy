@@ -15,6 +15,7 @@ namespace Insurance_Policy.Domain.Interfaces.Base
         IQueryable<T> GetAll();
         IQueryable<T> GetAll(Expression<Func<T, bool>> predicate);
         T Get(Expression<Func<T, bool>> predicate);
+        T Get(long id);
         void Commit();
     }
 }

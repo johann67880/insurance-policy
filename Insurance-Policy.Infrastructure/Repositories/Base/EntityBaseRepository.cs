@@ -76,5 +76,11 @@ namespace Insurance_Policy.Infrastructure.Repositories.Base
                 return false;
             }
         }
+
+        public T Get(long id)
+        {
+            var entitySet = Context.Set<T>();
+            return entitySet.Find(id);
+        }
     }
 }
