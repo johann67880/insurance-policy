@@ -1,0 +1,12 @@
+.link {
+    color : #4080f0;
+    cursor: pointer;
+}
+
+.container-options {
+    width: 50%;
+    margin: auto;
+    border: 1px solid #e0e0e0;
+    margin-top: 50px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}

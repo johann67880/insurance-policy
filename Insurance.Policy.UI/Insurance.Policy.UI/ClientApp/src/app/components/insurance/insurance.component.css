@@ -21,3 +21,11 @@ table {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+.back-container {
+    padding-left: 20px;
+}
+
+.display-inline {
+    display: inline;
+}

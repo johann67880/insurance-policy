@@ -11,6 +11,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { InsuranceComponent } from "./components/insurance/insurance.component";
 import { InsuranceDetailComponent } from "./components/insurance/insurance-detail/insurance-detail.component";
 import { AssignInsuranceComponent } from  './components/assign-insurance/assign-insurance.component';
+import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from "./common/material.module";
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MaterialModule } from "./common/material.module";
     LoginComponent,
     InsuranceComponent,
     InsuranceDetailComponent,
-    AssignInsuranceComponent
+    AssignInsuranceComponent,
+    HomeComponent
   ],
   providers: [
     { provide: 'BASE_URL', useFactory: getBaseUrl }

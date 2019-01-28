@@ -13,14 +13,24 @@ namespace Insurance_Policy.Services.Services
     public class InsuranceService : IInsuranceService<Insurance>
     {
         private readonly IInsuranceRepository repository;
+        private readonly IRiskTypeRepository riskRepository;
 
-        public InsuranceService(IInsuranceRepository repository)
+        public InsuranceService(IInsuranceRepository repository, IRiskTypeRepository riskRepository)
         {
             this.repository = repository;
+            this.riskRepository = riskRepository;
         }
 
         public void Add(Insurance entity)
         {
+            //Business validations are implemented in Service Layer
+            var risk = this.riskRepository.Get(x => x.Id.Equals(entity.Id));
+
+            if(risk.Type.Contains("Alto") && entity.CoveragePercentage >= 50)
+            {
+                return;
+            }
+
             this.repository.Add(entity);
         }
 

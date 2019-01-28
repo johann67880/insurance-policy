@@ -1,10 +1,17 @@
 <div>
     <div class="container">
         <div class="div-create-container">
-            <button mat-stroked-button color="primary" (click)="createInsurance()">
-                <span class="button-create-text">Crear Póliza de Seguro</span>
-                <mat-icon svgIcon="add"></mat-icon>
-            </button>
+            <div class="display-inline">
+                <button mat-stroked-button color="primary" (click)="createInsurance()">
+                    <span class="button-create-text">Crear Póliza de Seguro</span>
+                    <mat-icon svgIcon="add"></mat-icon>
+                </button>
+            </div>
+            <div class="back-container display-inline">
+                <button mat-stroked-button color="primary" routerLink="/home">
+                    <span class="button-create-text">Regresar</span>
+                </button>
+            </div>
         </div>
         <div>
             <mat-progress-bar *ngIf="isBusy" mode="indeterminate"></mat-progress-bar>
