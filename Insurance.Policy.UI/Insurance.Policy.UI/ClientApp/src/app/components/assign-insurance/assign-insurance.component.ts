@@ -9,6 +9,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { InsuranceByCustomerService } from '../assign-insurance/insurancesByCustomer.service';
 import { InsurancesByCustomer } from '../../models/insurancesByCustomer.model';
 import { forEach } from '@angular/router/src/utils/collection';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'assign-insurance',
@@ -44,7 +45,8 @@ export class AssignInsuranceComponent implements OnInit {
   constructor(private customerService : CustomerService,
     private insuranceService : InsuranceService,
     private assignationService : InsuranceByCustomerService,
-    private formBuilder : FormBuilder) {
+    private formBuilder : FormBuilder,
+    private snackBar : MatSnackBar) {
 
     this.getCustomers();
     this.getInsurances();
@@ -106,6 +108,7 @@ export class AssignInsuranceComponent implements OnInit {
       this.assignationService.save(this.newAssignations).subscribe(data => {
         this.currentAssignations = this.newAssignations;
         this.isBusy = false;
+        this.snackBar.open('Se ha guardado la asignación correctamente.', "Ok", { duration : 5000 });
       });
     }
   }

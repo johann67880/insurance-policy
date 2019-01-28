@@ -19,9 +19,9 @@ namespace Insurance_Policy.Infrastructure.Repositories
 
         public List<InsuranceModel> GetAllInsurances()
         {
-            var result = from i in this.Context.Insurances
-                         join c in this.Context.CoverageTypes on i.CoverageId equals c.Id
-                         join r in this.Context.RiskTypes on i.RiskId equals r.Id
+            var result = from i in this.Context.Insurance
+                         join c in this.Context.CoverageType on i.CoverageId equals c.Id
+                         join r in this.Context.RiskType on i.RiskId equals r.Id
                          select new InsuranceModel
                          {
                              Id = i.Id,

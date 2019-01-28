@@ -25,10 +25,10 @@ namespace Insurance_Policy.Infrastructure.Context
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<CoverageType> CoverageTypes { get; set; }
-        public DbSet<RiskType> RiskTypes { get; set; }
-        public DbSet<Insurance> Insurances { get; set; }
-        public DbSet<InsuranceByCustomer> InsuranceByCustomers { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<CoverageType> CoverageType { get; set; }
+        public DbSet<RiskType> RiskType { get; set; }
+        public DbSet<Insurance> Insurance { get; set; }
+        public DbSet<InsuranceByCustomer> InsuranceByCustomer { get; set; }
     }
 }
