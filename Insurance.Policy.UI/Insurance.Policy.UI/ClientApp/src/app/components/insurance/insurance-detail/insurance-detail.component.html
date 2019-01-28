@@ -46,5 +46,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="closeDialog()">Cancelar</button>
-  <button mat-button color="primary" [mat-dialog-close]="form.controls" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="addInsurance()" color="primary" [disabled]="invalidForm" [mat-dialog-close]="form.controls" cdkFocusInitial>Ok</button>
 </div>

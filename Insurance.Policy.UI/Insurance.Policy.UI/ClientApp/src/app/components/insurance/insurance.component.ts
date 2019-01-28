@@ -62,29 +62,9 @@ export class InsuranceComponent implements OnInit, AfterViewInit {
         });
 
         dialogRef.afterClosed().subscribe(result => {
-            if(result) {
-
-                 this.selectedInsurance.Name = result.Name.value;
-                 this.selectedInsurance.Description = result.Description.value;
-                 this.selectedInsurance.CoveragePeriod = result.CoveragePeriod.value;
-                 this.selectedInsurance.Pricing = result.Pricing.value;
-                 this.selectedInsurance.StartDate = result.StartDate.value;
-                 this.selectedInsurance.CoverageId = result.SelectCoverage.value;
-                 this.selectedInsurance.CoveragePercentage = result.CoveragePercentage.value;
-                 this.selectedInsurance.RiskId = result.SelectRisk.value;
-
-                //Is new insurance
-                if(this.selectedInsurance.Id > 0) {
-                    this.service.update(this.selectedInsurance).subscribe(data => {
-                        this.getInsurances();
-                    });
-                } else {
-                    //is updating
-                    this.service.save(this.selectedInsurance).subscribe(data => {
-                        this.getInsurances();
-                    });
-                }
-            }
+            setTimeout(() => {
+                this.getInsurances();
+            }, 500);
         });
     }
 

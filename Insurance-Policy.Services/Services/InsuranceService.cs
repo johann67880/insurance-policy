@@ -21,17 +21,15 @@ namespace Insurance_Policy.Services.Services
             this.riskRepository = riskRepository;
         }
 
-        public void Add(Insurance entity)
+        public bool Add(Insurance entity)
         {
-            //Business validations are implemented in Service Layer
-            var risk = this.riskRepository.Get(x => x.Id.Equals(entity.Id));
-
-            if(risk.Type.Contains("Alto") && entity.CoveragePercentage >= 50)
+            if (validateInsurance(entity))
             {
-                return;
+                this.repository.Add(entity);
+                return true;
             }
 
-            this.repository.Add(entity);
+            return false;
         }
 
         public void Delete(Insurance entity)
@@ -54,9 +52,28 @@ namespace Insurance_Policy.Services.Services
             return this.repository.GetAllInsurances();
         }
 
-        public void Update(Insurance entity)
+        public bool Update(Insurance entity)
         {
-            this.repository.Update(entity);
+            if (validateInsurance(entity))
+            {
+                this.repository.Update(entity);
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool validateInsurance(Insurance entity)
+        {
+            //Business validations are implemented in Service Layer
+            var risk = this.riskRepository.Get(x => x.Id.Equals(entity.RiskId));
+
+            if (risk.Type.ToLower().Contains("alto") && entity.CoveragePercentage >= 50)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

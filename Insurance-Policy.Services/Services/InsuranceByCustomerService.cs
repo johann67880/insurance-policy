@@ -18,9 +18,17 @@ namespace Insurance_Policy.Services.Services
             this.repository = repository;
         }
 
-        public void Add(InsuranceByCustomer entity)
+        public bool Add(InsuranceByCustomer entity)
         {
-            this.repository.Add(entity);
+            try
+            {
+                this.repository.Add(entity);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public void Delete(InsuranceByCustomer entity)
@@ -48,9 +56,17 @@ namespace Insurance_Policy.Services.Services
             this.repository.SaveAssignations(assignations);
         }
 
-        public void Update(InsuranceByCustomer entity)
+        public bool Update(InsuranceByCustomer entity)
         {
-            this.repository.Update(entity);
+            try
+            {
+                this.repository.Update(entity);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

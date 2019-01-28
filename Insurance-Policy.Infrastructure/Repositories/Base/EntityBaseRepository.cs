@@ -19,11 +19,19 @@ namespace Insurance_Policy.Infrastructure.Repositories.Base
             this.Context = context;
         }
 
-        public void Add(T entity)
+        public bool Add(T entity)
         {
-            var entitySet = Context.Set<T>();
-            entitySet.Add(entity);
-            Commit();
+            try
+            {
+                var entitySet = Context.Set<T>();
+                entitySet.Add(entity);
+                Commit();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public void Commit()
@@ -55,10 +63,18 @@ namespace Insurance_Policy.Infrastructure.Repositories.Base
             return GetAll().Where(predicate);
         }
 
-        public void Update(T entity)
+        public bool Update(T entity)
         {
-            Context.Entry(entity).State = EntityState.Modified;
-            Commit();
+            try
+            {
+                Context.Entry(entity).State = EntityState.Modified;
+                Commit();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

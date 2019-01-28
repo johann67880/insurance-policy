@@ -8,9 +8,9 @@ namespace Insurance_Policy.Services.Interfaces.Base
 {
     public interface IBaseService<T>
     {
-        void Add(T entity);
+        bool Add(T entity);
 
-        void Update(T entity);
+        bool Update(T entity);
 
         void Delete(T entity);
 

@@ -43,7 +43,7 @@ namespace Insurance_Policy.API.Controllers
 
         [Route("update")]
         [HttpPut]
-        public IHttpActionResult UpdateCustomer(Insurance insurance)
+        public IHttpActionResult UpdateInsurance(Insurance insurance)
         {
             try
             {
@@ -52,8 +52,8 @@ namespace Insurance_Policy.API.Controllers
                     return this.Ok(false);
                 }
 
-                this.service.Update(insurance);
-                return this.Ok(true);
+                var result = this.service.Update(insurance);
+                return this.Ok(result);
             }
             catch (Exception e)
             {
@@ -63,7 +63,7 @@ namespace Insurance_Policy.API.Controllers
 
         [Route("delete/{id:int}")]
         [HttpDelete]
-        public IHttpActionResult DeleteCustomer(int id)
+        public IHttpActionResult DeleteInsurance(int id)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace Insurance_Policy.API.Controllers
 
         [Route("save")]
         [HttpPost]
-        public IHttpActionResult SaveCustomer([FromBody] Insurance insurance)
+        public IHttpActionResult SaveInsurance([FromBody] Insurance insurance)
         {
             try
             {
@@ -97,8 +97,8 @@ namespace Insurance_Policy.API.Controllers
                     return this.Ok(false);
                 }
 
-                this.service.Add(insurance);
-                return this.Ok(true);
+                var result = this.service.Add(insurance);
+                return this.Ok(result);
             }
             catch (Exception e)
             {

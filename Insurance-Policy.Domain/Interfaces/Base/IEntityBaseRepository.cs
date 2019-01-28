@@ -9,8 +9,8 @@ namespace Insurance_Policy.Domain.Interfaces.Base
 {
     public interface IEntityBaseRepository<T>
     {
-        void Add(T entity);
-        void Update(T entity);
+        bool Add(T entity);
+        bool Update(T entity);
         void Delete(T entity);
         IQueryable<T> GetAll();
         IQueryable<T> GetAll(Expression<Func<T, bool>> predicate);

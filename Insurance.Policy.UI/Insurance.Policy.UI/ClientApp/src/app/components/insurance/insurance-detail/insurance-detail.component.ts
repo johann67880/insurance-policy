@@ -1,17 +1,19 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 import { Insurance } from '../../../models/insurance.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CoverageTypeService } from '../../coverageType/coverage.service';
 import { CoverageType } from '../../../models/coverageType.model';
 import { RiskTypeService } from '../../riskType/riskType.service';
 import { RiskType } from '../../../models/riskType.model';
+import { InsuranceService } from '../insurance.service';
+import { config } from 'rxjs';
 
 @Component({
   selector: 'insurance-detail',
   templateUrl: './insurance-detail.component.html',
   styleUrls: ['./insurance-detail.component.css'],
-  providers : [CoverageTypeService, RiskTypeService]
+  providers : [CoverageTypeService, RiskTypeService, InsuranceService]
 })
 export class InsuranceDetailComponent implements OnInit {
   form: FormGroup;
@@ -19,10 +21,13 @@ export class InsuranceDetailComponent implements OnInit {
   coverages : CoverageType[] = [];
   risks : RiskType[] = [];
   modifiedInsurance : Insurance;
+  invalidForm : boolean = false;
 
   constructor(private formBuilder : FormBuilder,
     private service : CoverageTypeService,
     private riskService : RiskTypeService,
+    private insuranceService : InsuranceService,
+    private snackBar : MatSnackBar,
     public dialogRef: MatDialogRef<InsuranceDetailComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Insurance) {
       this.tempInsurance = data;
@@ -51,6 +56,11 @@ export class InsuranceDetailComponent implements OnInit {
     this.form.controls.SelectCoverage.setValue(this.tempInsurance.CoverageId);
     this.form.controls.CoveragePercentage.setValue(this.tempInsurance.CoveragePercentage);
     this.form.controls.SelectRisk.setValue(this.tempInsurance.RiskId);
+    this.invalidForm = this.form.invalid;
+
+    this.form.valueChanges.subscribe(result => {
+      this.invalidForm = this.form.invalid;
+    });
   }
 
   getCoverages() {
@@ -67,6 +77,46 @@ export class InsuranceDetailComponent implements OnInit {
 
   closeDialog() : void {
     this.dialogRef.close();
+  }
+
+  addInsurance() {
+    this.invalidForm = this.form.invalid;
+
+    if(!this.invalidForm) {
+
+      let insurance = new Insurance();
+      insurance.Id = this.tempInsurance.Id;
+      insurance.Name = this.form.controls.Name.value;
+      insurance.Description = this.form.controls.Description.value;
+      insurance.CoveragePeriod = this.form.controls.CoveragePeriod.value;
+      insurance.Pricing = this.form.controls.Pricing.value;
+      insurance.StartDate = this.form.controls.StartDate.value;
+      insurance.CoverageId = this.form.controls.SelectCoverage.value;
+      insurance.CoveragePercentage = this.form.controls.CoveragePercentage.value;
+      insurance.RiskId = this.form.controls.SelectRisk.value;
+
+      //Is updating
+      if(insurance.Id > 0) {
+        this.insuranceService.update(insurance).subscribe(data => {
+            if(data) {
+              this.snackBar.open('El registro se ha almacenado exitosamente.', "Ok", { duration : 5000 });
+            } else {
+              this.snackBar.open('El porcentaje de cobertura para riesgo alto no debe ser mayor a 50%.', 
+                "Ok", { duration : 5000 });
+            }
+        });
+      } else {
+          //is new one
+          this.insuranceService.save(insurance).subscribe(data => {
+            if(data) {
+              this.snackBar.open('El registro se ha almacenado exitosamente.', "Ok", { duration : 5000 });
+            } else {
+              this.snackBar.open('El porcentaje de cobertura para riesgo alto no debe ser mayor a 50%.', 
+                "Ok", { duration : 5000 });
+            }
+          });
+      }
+    }
   }
 
 }
